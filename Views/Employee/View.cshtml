@@ -1,8 +1,11 @@
-﻿@model MVCCRUD.Models.AddEmployeeViewModel
+﻿@model MVCCRUD.Models.UpdateEmployeeViewModel
 
-<h1>ADD Employee</h1>
-
-<form method="post" action="Add"  >
+<h1>EDIT Employee</h1>
+<form method="post" action="View">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
     <div class="mb-3">
         <label for="" class="form-label">Name</label>
         <input type="text" class="form-control" asp-for="Name">
@@ -21,10 +24,11 @@
         <label for="" class="form-label">Department</label>
         <input type="text" class="form-control" asp-for="Department">
     </div>
-  
+
     <div class="mb-3">
         <label for="" class="form-label">DateOfBirth</label>
         <input type="date" class="form-control" asp-for="DateOfBirth">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Employee">Delete</button>
 </form>

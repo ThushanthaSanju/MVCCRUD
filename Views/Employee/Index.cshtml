@@ -1,0 +1,63 @@
+﻿@model List<MVCCRUD.Models.Domain.Employee>
+@{
+}
+
+<h1>Employee List</h1>
+
+ <table class="table">
+    <thead>
+        <tr>
+            <th>
+             Id
+            </th>
+            <th>
+             Name
+            </th>
+            <th>
+             Email
+            </th>
+            <th>
+               Salary
+            </th>
+            <th>
+          Department
+            </th>
+            <th>
+            DateOfBirth
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                   @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Salary
+                </td>
+                <td>
+                    @item.Department
+                </td>
+                <td>
+                    @item.DateOfBirth.ToString("dd-MM-yyyy")
+                </td>
+               
+               <td>
+                    <a href="Employee/View/@item.Id">View</a> |
+                    @* <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+                </td> 
+            </tr>
+        }
+    </tbody>
